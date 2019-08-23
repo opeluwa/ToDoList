@@ -1,0 +1,68 @@
+.title {
+  background-color: rgba(0, 0, 0, 0);
+  border:none;
+  text-align: center;
+}
+
+.description {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.4px grey solid;
+  color: white;
+}
+
+.btn-outline-primary:active
+{
+  background-color:#148A9D !important; /* add here any color */
+}
+
+.btn-outline-primary:hover
+{
+  background-color:#148A9D !important; /* add here any color */
+}
+
+.datein {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.5px grey solid;
+  color: white;
+}
+
+.container{
+  height:100%;
+}
+
+
+
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  z-index: 50;
+}
+
+.card{
+  position: fixed;
+
+  /*top:0;*/
+  /*bottom: 0;*/
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  max-height: 75vh;
+
+  margin: auto;
+  min-width: 25vw;
+  max-width:75vw;
+  padding: 0px;
+
+  z-index:100;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+}
+
+.alert-box-actions{
+  text-align: right;
+}

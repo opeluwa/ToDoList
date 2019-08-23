@@ -1,0 +1,16 @@
+<div class="card text-center" [ngStyle]="{'border' : '1px ' + colorBorder() + ' solid'}">
+<div class="ff" style="margin-bottom: 5px;">
+    <span class="badge badge-pill badge-danger float-left"  *ngIf="item.priority === 1">High</span>
+    <span class="badge badge-pill badge-warning float-left"  *ngIf="item.priority === 2" >Medium</span>
+    <span class="badge badge-pill badge-success float-left"  *ngIf="item.priority === 3" >Low</span>
+    <span class="badge badge-pill badge-primary float-left">{{belongsToUser? 'Owner' : 'set by someone else'}}</span>
+    <span class="badge badge-pill badge-dark float-left">{{item.completed? 'Completed' : 'tasks left'}}</span>
+</div>
+  <br>
+  <div class="card-body">
+
+    <h5 class="card-title">{{ item.name }}</h5>
+    <p class="card-text">{{ item.description }}</p>
+    <p class="card-text"><small class="text-muted">{{item.dueDate == 0? 'Bill has no due date' : 'Due by ' + (item.dueDate | date :'medium') }}</small></p>
+  </div>
+</div>

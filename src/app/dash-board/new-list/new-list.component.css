@@ -1,0 +1,109 @@
+.title {
+  background-color: rgba(0, 0, 0, 0);
+  border:none;
+  text-align: center;
+}
+
+.description {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.4px grey solid;
+  color: white;
+}
+
+.btn-outline-primary:active
+{
+  background-color:#148A9D !important; /* add here any color */
+}
+
+ .btn-outline-primary:hover
+ {
+   background-color:#148A9D !important; /* add here any color */
+ }
+
+.datein {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.5px grey solid;
+  color: white;
+}
+
+.container{
+  /*height:100%;*/
+
+}
+
+
+.high{
+  background: #bb2124;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).high.active{
+  background: #A40A0D;
+  font-weight: bold;
+}
+
+.medium{
+  background: #f0ad4e;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).medium.active{
+  background: #D99637;
+  font-weight: bold;
+}
+
+.low{
+  background: #22bb33;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).low.active{
+  background: #0BA41C;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  z-index: 50;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px red solid;
+}
+
+textarea.ng-invalid.ng-touched{
+  border: 1px red solid;
+}
+
+.card{
+  position: fixed;
+
+  /*top:0;*/
+  /*bottom: 0;*/
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  max-height: 70vh;
+
+  margin: auto;
+  min-width: 25vw;
+  max-width:75vw;
+  padding: 0px;
+
+  z-index:100;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+}
+
+.alert-box-actions{
+  text-align: right;
+}

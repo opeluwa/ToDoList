@@ -1,0 +1,25 @@
+<div class="backdrop" (click)="Onleave()">
+</div>
+
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{list.name}}
+    <span class="badge badge-pill badge-danger float-right" *ngIf="priority === 1">High</span>
+    <span class="badge badge-pill badge-warning float-right" *ngIf="priority === 2">medium</span>
+    <span class="badge badge-pill badge-success float-right" *ngIf="priority === 3">low</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title ">Description</h5>
+
+    <p class="card-text" style="margin-bottom: 5px;">{{list.description}}</p>
+    <button class="btn btn-outline-primary" type="button" (click)="showDetails = !showDetails" style="color: white; border: 1px #148A9D solid; font-size: 10pt; margin-bottom: 10px" >show more details</button>
+    <p class="" *ngIf="showDetails" style="font-size: 10pt">This list was created by {{list.createdBy}} on {{list.dateCreated | date :'medium'}}  {{list.dueDate == 0 ? '' : 'it is due by the ' + (list.dueDate | date:'medium'   )}}
+      .The accounts that have access to this list are {{list.sharedWith}}</p>
+    <div class="form-check" *ngFor="let item of list.list; let i = index">
+      <div class="eachrow">
+      <input class="form-check-input" type="checkbox" [checked]="item.completed" (change)="onChecked($event, item.itemId, i)" [id]="i">
+      <label class="form-check-label"  [for]="i">{{item.listItem}} </label>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-danger" (click)="onRemove()">Remove from dashboard</button>
+</div>

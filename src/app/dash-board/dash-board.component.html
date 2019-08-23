@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 10px;">
+  <div class="row" >
+    <ng-template appPlaceholder>
+      <!--this is where component bill pops up-->
+    </ng-template>
+  </div>
+
+  <div class="card-columns">
+    <div class="card text-center" (click)="showCreateList()" style="cursor: pointer;">
+      <div class="card-body">
+        <p class="card-text" style="font-size: 5rem; color: grey;"><b>+</b></p>
+        <p class="card-text"><small class="text-muted">Create a new To-Do list</small></p>
+      </div>
+    </div>
+    <div *ngFor="let item of list; let i = index">
+      <app-dash-board-item style="cursor: pointer" (click)="showListChecker(i)" [index]="i"></app-dash-board-item>
+    </div>
+  </div>
+</div>
+
