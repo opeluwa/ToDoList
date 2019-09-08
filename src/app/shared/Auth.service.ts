@@ -40,12 +40,12 @@ export class AuthService {
     localStorage.clear();
     clearTimeout(this.tokenTimer);
     this.router.navigate(['/login']);
+    window.location.reload();
   }
 
   manuallogout() {  // if manual logout is selected
     if (localStorage.getItem('user')) {
       this.logout();
-      window.location.reload();
     }
   }
 
