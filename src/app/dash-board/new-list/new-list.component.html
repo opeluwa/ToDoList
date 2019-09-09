@@ -7,10 +7,13 @@
         <div class="card text-white bg-info mb-3 float-right" style="max-width: 21rem;">
           <form [formGroup] ="form" (ngSubmit)="onSubmit()">
           <div class="card-header">
-            <p class="float-right" (click)="Onleave()" style="cursor: pointer">X</p>
+            <p class="float-right closeX" (click)="Onleave()" style="cursor: pointer;">X</p>
             <div class="form-group">
               <label for="title"></label>
               <input type="title" style="color: white;" class="form-control title" id="title" aria-describedby="titleHelp" placeholder="Enter Title of list" formControlName="title">
+              <span class="text-muted" *ngIf="!form.get('title').valid && form.get('title').touched">List must have a title</span>
+
+
             </div>
           </div>
           <div class="card-body">

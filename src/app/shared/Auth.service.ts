@@ -75,7 +75,6 @@ export class AuthService {
     return this.httpServ.registerAccount({email, password}).pipe(tap(data => {
       this.setAuth(data); // if the creation auth is successful
     }, err => {
-      console.log(err);  // if an error
     }), map(data => {
       return data.message;
     }, err => {

@@ -9,13 +9,13 @@ import {AuthService} from '../../shared/Auth.service';
   styleUrls: ['./dash-board-item.component.css']
 })
 export class DashBoardItemComponent implements OnInit {
-  @Input() index: number; // index of list in array
-  item: ListModel;  // list
+  index: number; // index of list in array
+  @Input() item: ListModel;  // list
   belongsToUser = false; // does list belong to user
   constructor(private listServ: ListService, private authServ: AuthService) { }
 
   ngOnInit() {
-    this.item = this.listServ.getListFromIndex(this.index);
+    this.index = (this.listServ.getList()).indexOf(this.item);
     this.item.createdBy === this.authServ.email ?
       this.belongsToUser = true : this.belongsToUser = false;  // figure out if list belongs to a user
   }

@@ -12,12 +12,22 @@
 
     <p class="card-text" style="margin-bottom: 5px;">{{list.description}}</p>
     <button class="btn btn-outline-primary" type="button" (click)="showDetails = !showDetails" style="color: white; border: 1px #148A9D solid; font-size: 10pt; margin-bottom: 10px" >show more details</button>
-    <p class="" *ngIf="showDetails" style="font-size: 10pt">This list was created by {{list.createdBy}} on {{list.dateCreated | date :'medium'}}  {{list.dueDate == 0 ? '' : 'it is due by the ' + (list.dueDate | date:'medium'   )}}
-      .The accounts that have access to this list are {{list.sharedWith}}</p>
+    <p class="" *ngIf="showDetails" style="font-size: 10pt">
+      This list was created by {{list.createdBy}} on {{list.dateCreated | date :'medium'}}
+    </p>
+
+    <p class="" *ngIf="showDetails" style="font-size: 10pt">
+      {{list.dueDate == 0 ? '' : 'It is due by ' + (list.dueDate | date:'medium'   )}}
+    </p>
+
+    <p class="" *ngIf="showDetails" style="font-size: 10pt">
+      {{ list.sharedWith.length > 0 ? 'The accounts that have access to this list are ' + list.sharedWith : '' }}
+    </p>
+
     <div class="form-check" *ngFor="let item of list.list; let i = index">
       <div class="eachrow">
       <input class="form-check-input" type="checkbox" [checked]="item.completed" (change)="onChecked($event, item.itemId, i)" [id]="i">
-      <label class="form-check-label"  [for]="i">{{item.listItem}} </label>
+      <label class="form-check-label" [ngStyle]="{'text-decoration': item.completed ? 'black line-through': 'none'}" [for]="i">{{item.listItem}} </label>
       </div>
     </div>
   </div>

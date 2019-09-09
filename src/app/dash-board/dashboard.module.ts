@@ -8,9 +8,11 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DashBoardComponent} from './dash-board.component';
 import {PlaceholderDirective} from './placeholder.directive';
+import { SorterPipe } from './sorter.pipe';
+import { DropDownDirective } from './drop-down.directive';
 
 @NgModule({
-  declarations: [NewListComponent, ListCheckerComponent, DashBoardComponent, DashBoardItemComponent, PlaceholderDirective],
+  declarations: [NewListComponent, ListCheckerComponent, DashBoardComponent, DashBoardItemComponent, PlaceholderDirective, SorterPipe, DropDownDirective],
   imports: [DashboardRouting, ReactiveFormsModule, CommonModule, FormsModule, RouterModule],
   exports: [NewListComponent, ListCheckerComponent, DashBoardItemComponent, DashBoardComponent, PlaceholderDirective],
   entryComponents: [ListCheckerComponent, NewListComponent]

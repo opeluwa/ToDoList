@@ -5,7 +5,6 @@ const authModel = require('../model/auth');
 
 exports.newList = (req, res, next) => {
   let listItem = [];
-  // console.log(req);
   const listData = new listModel({
     name: req.body.name,
     sharedWith: req.body.sharedWith,
