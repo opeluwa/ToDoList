@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="339f49bf-1ac3-4cb5-99a5-7b87916e1116" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/shared/Auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/Auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dash-board/list.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dash-board/list.resolver.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -19,11 +19,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/shared/Auth.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+            <state relative-caret-position="424">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/dash-board/list.resolver.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -154,6 +166,7 @@
       <find>console</find>
       <find>abstrac</find>
       <find>controls</find>
+      <find>logoutTimer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/app/dash-board/dash-board-item/dash-board-item.component.css" />
         <option value="$PROJECT_DIR$/src/app/dash-board/dash-board.component.html" />
         <option value="$PROJECT_DIR$/src/app/auth/auth.component.html" />
-        <option value="$PROJECT_DIR$/src/app/dash-board/list.resolver.ts" />
         <option value="$PROJECT_DIR$/src/app/dash-board/dash-board-item/dash-board-item.component.ts" />
         <option value="$PROJECT_DIR$/src/app/header/header.component.ts" />
         <option value="$PROJECT_DIR$/src/app/list-checker/list-checker.component.ts" />
@@ -213,12 +225,13 @@
         <option value="$PROJECT_DIR$/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/src/app/dash-board/dash-board-item/dash-board-item.component.html" />
         <option value="$PROJECT_DIR$/src/app/shared/Auth.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/dash-board/list.resolver.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1648" />
-    <option name="width" value="1195" />
+    <option name="width" value="1525" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -246,6 +259,13 @@
               <item name="ToDoList" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToDoList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToDoList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="dash-board" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ToDoList" type="b2602c69:ProjectViewProjectNode" />
@@ -341,18 +361,18 @@
       <workItem from="1566525443334" duration="6429000" />
       <workItem from="1567437271709" duration="868000" />
       <workItem from="1567530640227" duration="711000" />
-      <workItem from="1567948432467" duration="5160000" />
+      <workItem from="1567948432467" duration="5902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201310000" />
+    <option name="totallyTimeSpent" value="202052000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1648" y="0" width="1195" height="1047" extended-state="0" />
+    <frame x="1648" y="0" width="1525" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3854797" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29993275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -430,16 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="82" column="59" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/dash-board/list.resolver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="84" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,8 +804,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/Auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+        <state relative-caret-position="424">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/dash-board/list.resolver.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
