@@ -7,5 +7,4 @@ this application can be seen running at: http://mytodonow.s3-website.eu-west-2.a
 # Future Work
 
 - Ability to add/ remove items in a list while the list is live.
-- Ability to sort the lists by due date, creation date or the criticality of a list.
  
