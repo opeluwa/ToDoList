@@ -26,22 +26,24 @@ export class AuthComponent implements OnInit {
       this.authServ.logIn(this.form.value.email, this.form.value.password).pipe(take(1)).subscribe( result => {
         this.router.navigate(['/DashBoard']);   // when logged in navigate away
       }, err => {
-        this.isError = true;  // set true
-        console.log(err);
-        if (err.statusText === 'Unknown Error') {  // if no connectioon to the server at all
-          this.errorMessage = 'Failure to contact server. Please try again later';
-        } else {
-          this.errorMessage = err.error.message;
-        }
+        this.errorChecker(err);
       });
     } else {
       this.authServ.createAccount(this.form.value.email, this.form.value.password).pipe(take(1)).subscribe(result => {  // if on create account mode
         this.authServ.autologin(); // when logged in navigate away
         this.router.navigate(['/DashBoard']);
       }, err => {
-        this.isError = true;  // error handling
-        this.errorMessage = err.error.message;
+        this.errorChecker(err);
       });
+    }
+  }
+
+  errorChecker(err) {
+    this.isError = true;  // set true
+    if (err.statusText === 'Unknown Error') {  // if no connectioon to the server at all
+      this.errorMessage = 'Failure to contact server. Please try again later';
+    } else {
+      this.errorMessage = err.error.message;
     }
   }
 }

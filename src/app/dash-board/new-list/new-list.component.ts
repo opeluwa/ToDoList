@@ -4,6 +4,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ItemModel} from '../../shared/item.model';
 import {ListModel} from '../../shared/list.model';
 import {ListService} from '../../shared/list.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-new-list',
@@ -88,11 +89,16 @@ export class NewListComponent implements OnInit {
     });
     const list: ListModel = new ListModel(title, shared, itemsArray, description, new Date().getTime(),
       new Date(dueDate).getTime(), this.listPriority, null, null, false);  // build list
-    this.listServ.createList(list).subscribe(data => {  // create the list
+
+    this.listServ.createList(list).pipe(take(1)).subscribe(data => {  // create the list
     this.form.reset(); // clear the list if needed.
     }, err => {
       this.isError = true; // show errors
       this.errMessage =  err.error.message;
+
+      if (!err.error.message) {
+        alert('Issue communicating with the server. Please check your connection and try again later.');
+      }
     });
   }
 

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {ListModel} from './list.model';
 import {ItemModel} from './item.model';
 import {HttpService} from './http.service';
-import {tap} from 'rxjs/operators';
+import {take, tap} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {AuthService} from './Auth.service';
 

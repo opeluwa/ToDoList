@@ -4,7 +4,7 @@ import {
   ComponentFactoryResolver,
   DoCheck,
   ElementRef,
-  OnChanges,
+  OnChanges, OnDestroy,
   OnInit,
   Renderer2,
   ViewChild
@@ -17,15 +17,17 @@ import {take} from 'rxjs/operators';
 import {ActivatedRoute, Router, RouterStateSnapshot} from '@angular/router';
 import {ListCheckerComponent} from './list-checker/list-checker.component';
 import {relativeFrom} from '@angular/compiler-cli/src/ngtsc/file_system';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
   styleUrls: ['./dash-board.component.css']
 })
-export class DashBoardComponent implements OnInit {
+export class DashBoardComponent implements OnInit, OnDestroy {
     list: ListModel[] = []; // hold all the lists
     selected = 1;
+    listSub: Subscription;
     @ViewChild(PlaceholderDirective, {static: false}) listPopUp: PlaceholderDirective; // place where directive should appear
     @ViewChild('dropdown', {static: false}) dropDown: ElementRef;
     constructor(private listServ: ListService, private ComponentFactory: ComponentFactoryResolver,
@@ -74,6 +76,10 @@ export class DashBoardComponent implements OnInit {
     const el = this.dropDown.nativeElement.classList.contains('show');
     el ? this.renderer.removeClass(this.dropDown.nativeElement, 'show') :
       this.renderer.addClass(this.dropDown.nativeElement, 'show');
+  }
+
+  ngOnDestroy(): void {
+      this.listSub.unsubscribe();
   }
 
 }

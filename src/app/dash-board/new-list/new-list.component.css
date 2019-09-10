@@ -83,7 +83,13 @@ input.ng-invalid.ng-touched{
 }
 
 textarea.ng-invalid.ng-touched{
-  border: 1px red solid;
+  border-width: 20px;
+  border-color: red;
+  border-style:solid;
+}
+
+.text-muted{
+  color: red;
 }
 
 .card{

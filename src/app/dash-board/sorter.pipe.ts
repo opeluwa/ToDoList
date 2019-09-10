@@ -10,15 +10,15 @@ export class SorterPipe implements PipeTransform {
       if (selected === 1) {
           return n1.priority > n2.priority ? 1 : -1;
       } else if (selected === 2) {
-        return n1.priority < n2.priority ? 1 : -1;
+          return n1.priority < n2.priority ? 1 : -1;
       } else if (selected === 3) {
-        return n1.dueDate < n2.dueDate ? 1 : -1;
+          return n1.dueDate < n2.dueDate ? 1 : -1;
       } else if (selected === 4) {
-        return n1.dueDate > n2.dueDate ? 1 : -1;
+          return n1.dueDate > n2.dueDate ? 1 : -1;
       } else if (selected === 5) {
-        return n1.dateCreated > n2.dateCreated ? 1 : -1;
+          return n1.dateCreated < n2.dateCreated ? 1 : -1;
       } else if (selected === 6) {
-        return n1.dateCreated < n2.dateCreated ? 1 : -1;
+          return n1.dateCreated > n2.dateCreated ? 1 : -1;
       }
     });
   }
