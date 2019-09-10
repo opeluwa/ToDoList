@@ -11,7 +11,7 @@
 
               <div class="form-group">
                 <label for="password">password</label>
-                <input type="password" id="password" placeholder="password" class="form-control" name="password" required ngModel minlength="6" ngModel #password="ngModel">
+                <input type="password" id="password" placeholder="password" class="form-control" name="password" required minlength="6" ngModel #password="ngModel">
                 <span class="text-muted" *ngIf="!password.valid && password.touched"> Password must be at least of length 6</span>
               </div>
 

@@ -10,6 +10,7 @@ import {AuthService} from './Auth.service';
 export class ListService {
 
   list: ListModel[] = [];
+  autoFetch = false;
   listSubject = new BehaviorSubject<any>(null);
 
   constructor(private httpServ: HttpService, private authServ: AuthService) {}
@@ -17,6 +18,12 @@ export class ListService {
   fetchLists(): Observable<any> {  // list fetcher
     this.list = [];
     return this.httpServ.getList().pipe(tap(data => {
+
+
+      if (!this.autoFetch) {
+        this.autoFetch = true;
+        this.regularUpdates();
+      }
       data.content.map(result => {
         const listItem = [];
         result.list.listItems.map(items => { // create array of all items
@@ -32,6 +39,7 @@ export class ListService {
         const list = new ListModel(result.list.name, result.list.sharedWith, listItem, result.list.description, result.list.dateCreated,
           result.list.dueDate, result.list.priority, result.list._id, result.list.createdBy, allCompleted);
         this.list.push(list);
+        this.listSubject.next(null);
       });
     }));
   }
@@ -42,6 +50,18 @@ export class ListService {
 
   getListFromIndex(index: number): ListModel {
     return this.list.slice(index, index + 1)[0];
+  }
+
+  regularUpdates() {
+    let customIntervalObservable = Observable.create(observer => {
+    setInterval(() => {
+      observer.next();
+      this.fetchLists().pipe(take(1)).subscribe();
+      }, 3000); });
+
+    customIntervalObservable = customIntervalObservable.subscribe();
+
+    // auto fetch list every 3 seconds
   }
 
   createList(list: ListModel) { // on creation of a list
@@ -56,7 +76,6 @@ export class ListService {
         data.listData.priority,  data.listData._id, this.authServ.email, false);
 
       this.list.push(listData);  // push list to array of lists
-      this.listSubject.next(null);
     }, err => {
       return err.error.message;
     }));

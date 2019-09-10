@@ -16,6 +16,9 @@ export class ListCheckerComponent implements OnInit {
   constructor(private listServ: ListService, private render: Renderer2, private elRef: ElementRef) { }
 
   ngOnInit() {
+    this.listServ.listSubject.subscribe(() => {
+      this.list = this.listServ.getListFromIndex(this.listIndex);
+    });
   }
 
   Onleave() {
@@ -27,7 +30,7 @@ export class ListCheckerComponent implements OnInit {
     }, err => {
       this.render.setProperty((event.target as HTMLInputElement), 'checked',
         !(event.target as HTMLInputElement).checked); // using render2 to alter the check box back to original state
-      err.error.message ? alert(err.error.message) : alert('Issue communicating with server, please try again later');
+      err.error && err.error.message ? alert(err.error.message) : alert('Issue communicating with server, please try again later');
     });
   }
 

@@ -1,38 +1,41 @@
-<div class="container" >
-  <div class="row" style="margin-top: 2vh; margin-right: 1vw">
-    <div class="ml-auto">
-      <div class="dropdown show" style="cursor: pointer" (click)="onDropdown()">
-        <a class="dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Sort By
-        </a>
-        <div class="dropdown-menu dropdown-menu-right show" appDropDown #dropdown aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" (click)="selected=1" [ngStyle]="{'color': selected == 1 ? 'blue' : 'black'}" style="cursor: pointer">
-            Highest priority
-          </a>
-          <a class="dropdown-item" (click)="selected=2" [ngStyle]="{'font color': selected == 2 ? 'blue' : 'black'}" style="cursor: pointer">
-            Lowest priority
-          </a>
-          <a class="dropdown-item" (click)="selected=3" [ngStyle]="{'color': selected == 3 ? 'blue' : 'black'}" style="cursor: pointer">
-            Due soonest
-          </a>
-          <a class="dropdown-item" (click)="selected=4" [ngStyle]="{'color': selected == 4 ? 'blue' : 'black'}" style="cursor: pointer">
-            Due latest
-          </a>
-          <a class="dropdown-item" (click)="selected=5" [ngStyle]="{'color': selected == 5 ? 'blue' : 'black'}" style="cursor: pointer">
-            Newly created
-          </a>
-          <a class="dropdown-item" (click)="selected=6" [ngStyle]="{'color': selected == 6 ? 'blue' : 'black'}" style="cursor: pointer">
-            Furthest created
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row" >
-    <ng-template appPlaceholder>
-      <!--this is where component bill pops up-->
-    </ng-template>
-  </div>
+<div class="row"  style="margin-top: 3vh;">
+  <ng-template appPlaceholder>
+    <!--this is where component bill pops up-->
+  </ng-template>
+</div>
+
+<div class="container" style="margin-top: 2vh;">
+
+  <!-- Sorting bit issue is that the sorting order is based on columns--->
+<!--  <div class="row" style="margin-top: 2vh; margin-right: 1vw">-->
+<!--    <div class="ml-auto">-->
+<!--      <div class="dropdown show" style="cursor: pointer" (click)="onDropdown()">-->
+<!--        <a class="dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">-->
+<!--          Sort By-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu dropdown-menu-right show" appDropDown #dropdown aria-labelledby="dropdownMenuLink">-->
+<!--          <a class="dropdown-item" (click)="selected=1" [ngStyle]="{'color': selected == 1 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Highest priority-->
+<!--          </a>-->
+<!--          <a class="dropdown-item" (click)="selected=2" [ngStyle]="{'font color': selected == 2 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Lowest priority-->
+<!--          </a>-->
+<!--          <a class="dropdown-item" (click)="selected=3" [ngStyle]="{'color': selected == 3 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Due soonest-->
+<!--          </a>-->
+<!--          <a class="dropdown-item" (click)="selected=4" [ngStyle]="{'color': selected == 4 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Due latest-->
+<!--          </a>-->
+<!--          <a class="dropdown-item" (click)="selected=5" [ngStyle]="{'color': selected == 5 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Newly created-->
+<!--          </a>-->
+<!--          <a class="dropdown-item" (click)="selected=6" [ngStyle]="{'color': selected == 6 ? 'blue' : 'black'}" style="cursor: pointer">-->
+<!--            Furthest created-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
   <div class="card-columns">
     <div class="card text-center" (click)="showCreateList()" style="cursor: pointer;">

@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="Onleave()">
 </div>
 
-<div class="container" style="margin-top: 10px;">
+<div class="container">
   <div class="row">
     <div class="mx-auto">
         <div class="card text-white bg-info mb-3 float-right" style="max-width: 21rem;">
@@ -46,10 +46,9 @@
               <div *ngIf="showSettings">
                 <h5 class="card-title">Advanced settings</h5>
                 <div class="custom-control custom-checkbox" style="margin-bottom: 10px;">
-                  <label class="custom-control-label" for="customCheck1" >Set the deadline</label>
-                  <input type="checkbox" class="custom-control-input" [checked]="showDate" (change)="showDate = !showDate" #tick id="customCheck1">
 
-
+                  <input type="checkbox" class="form-check-input" [checked]="showDate" (change)="showDate = !showDate" #tick id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1" >Set the deadline</label>
                 </div>
                 <div class="form-group" *ngIf="showDate">
                   <input class="form-control datein" name="date" formControlName="dateDue" type="datetime-local" id="date" style="margin-top: 10px;">
